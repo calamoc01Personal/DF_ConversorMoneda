@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="153.0" layoutY="23.0" text="Conversor de Moneda">
@@ -39,16 +38,11 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="161.0" layoutY="99.0" prefHeight="25.0" prefWidth="376.0" />
-      <TextField layoutX="161.0" layoutY="135.0" prefHeight="25.0" prefWidth="376.0" />
-      <TextField layoutX="161.0" layoutY="178.0" prefHeight="25.0" prefWidth="376.0" />
-      <TextField layoutX="161.0" layoutY="233.0" prefHeight="25.0" prefWidth="376.0" />
-      <TextField layoutX="161.0" layoutY="275.0" prefHeight="25.0" prefWidth="376.0" />
-      <Button layoutX="200.0" layoutY="332.0" mnemonicParsing="false" text="Convertir">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Button>
+      <TextField fx:id="candidad" layoutX="161.0" layoutY="99.0" prefHeight="25.0" prefWidth="376.0" />
+      <TextField fx:id="eu" layoutX="161.0" layoutY="135.0" prefHeight="25.0" prefWidth="376.0" />
+      <TextField fx:id="ey" layoutX="161.0" layoutY="178.0" prefHeight="25.0" prefWidth="376.0" />
+      <TextField fx:id="resultEU" layoutX="161.0" layoutY="233.0" prefHeight="25.0" prefWidth="376.0" />
+      <TextField fx:id="resultEY" layoutX="161.0" layoutY="275.0" prefHeight="25.0" prefWidth="376.0" />
       <Button layoutX="364.0" layoutY="332.0" mnemonicParsing="false" text="Limpiar">
          <font>
             <Font size="17.0" />

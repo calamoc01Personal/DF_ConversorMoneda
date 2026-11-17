@@ -15,42 +15,25 @@ public class Controladorconversor {
     @FXML
     private Button limpiar;
 
+    DoubleProperty EDolar = new SimpleDoubleProperty();//1.1256
+    DoubleProperty EYuan = new SimpleDoubleProperty();//163.50
+
+    DoubleProperty cantidadEuros = new SimpleDoubleProperty();
     @FXML
     public void initialize() {
 
-        DoubleProperty ED = new SimpleDoubleProperty();//1.1256
-        DoubleProperty EY = new SimpleDoubleProperty();//163.50
 
-        DoubleProperty cantidadEuros = new SimpleDoubleProperty();
 
         // Leer la cantidad introducida en euros
 
-        cantidad.textProperty().addListener((obs, oldValue, newValue) -> {
-            try {
-                cantidadEuros.set(Double.parseDouble(newValue));
-            } catch (NumberFormatException e) {
-                cantidadEuros.set(0);
-            }
-        });
+        leerTexfiel(cantidad, cantidadEuros);
+        leerTexfiel(eu, EDolar);
+        leerTexfiel(ey, EYuan);
 
-        eu.textProperty().addListener((obs, oldValue, newValue) -> {
-            try {
-                ED.set(Double.parseDouble(newValue));
-            } catch (NumberFormatException e) {
-                ED.set(0);
-            }
-        });
-        ey.textProperty().addListener((obs, oldValue, newValue) -> {
-            try {
-                EY.set(Double.parseDouble(newValue));
-            } catch (NumberFormatException e) {
-                EY.set(0);
-            }
-        });
 
         // Realizar las conversiones
-        NumberBinding resultadoDolar = cantidadEuros.multiply(ED);
-        NumberBinding resultadoYen = cantidadEuros.multiply(EY);
+        NumberBinding resultadoDolar = cantidadEuros.multiply(EDolar);
+        NumberBinding resultadoYen = cantidadEuros.multiply(EYuan);
 
         // Mostrar los resultados
         resultadoEU.textProperty().bind(resultadoDolar.asString());
@@ -65,7 +48,7 @@ public class Controladorconversor {
     }
 
 
-   /*public  void leerTexfiel(TextField textfield, DoubleProperty propiedad){
+   public  void leerTexfiel(TextField textfield, DoubleProperty propiedad){
 
         textfield.textProperty().addListener((obs, oldValue, newValue) -> {
             try {
@@ -75,5 +58,5 @@ public class Controladorconversor {
             }
         });
 
-    }*/
+    }
 }
